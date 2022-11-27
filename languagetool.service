@@ -1,0 +1,10 @@
+[Unit]
+Description=Run a local LanguageTool server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/java -cp /opt/languagetool/LanguageTool/languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin
+User=caubin
+
+[Install]
+WantedBy=multi-user.target
